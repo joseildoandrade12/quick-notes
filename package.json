@@ -2,7 +2,19 @@
   "name": "quick-notes",
   "version": "0.0.0",
   "private": true,
+  "description": "",
+  "homepage": "https://github.com/joseildoandrade12/quick-notes#readme",
+  "bugs": {
+    "url": "https://github.com/joseildoandrade12/quick-notes/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseildoandrade12/quick-notes.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "vite.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
