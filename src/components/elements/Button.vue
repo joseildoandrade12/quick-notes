@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const props = defineProps({
   content: String,
-  width: Number,
+  width: [Number, String],
 });
 
 const classAnimation = ref(false);

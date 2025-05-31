@@ -1,6 +1,16 @@
 <script setup>
+import { ref } from "vue";
 import Button from "./elements/Button.vue";
 import IconGrid from "./elements/IconGrid.vue";
+import NotaForm from "./NotaForm.vue";
+
+const modalActive = ref(false);
+
+function toggleModal() {
+  setTimeout(() => {
+    modalActive.value = !modalActive.value;
+  }, 200);
+}
 </script>
 
 <template>
@@ -8,9 +18,12 @@ import IconGrid from "./elements/IconGrid.vue";
     <h1>Quick Notes</h1>
     <div class="elements-header">
       <IconGrid />
-      <Button content="Create Note" width="268"><span class="icon-add"></span></Button>
+      <Button @click="toggleModal" content="Create Note" width="268">
+        <span class="icon-add"></span>
+      </Button>
     </div>
   </div>
+  <NotaForm v-show="modalActive" />
 </template>
 
 <style scoped>
