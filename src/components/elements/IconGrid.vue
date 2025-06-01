@@ -18,7 +18,7 @@ function countAdd() {
   }, 300);
 }
 
-const linkImage = computed(() => `./src/assets/icons/${gridSelected.value}.svg`);
+const linkImage = computed(() => `icons/${gridSelected.value}.svg`);
 </script>
 
 <template>
