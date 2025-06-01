@@ -8,10 +8,15 @@
   font-family: "Inter", sans-serif;
 }
 
+html{
+  height: 100vh;
+  padding: 120px;
+  margin-bottom: 120px;
+}
+
 body {
   background-color: #f9fafb;
   width: 100%;
-  padding: 120px 120px;
 }
 
 h1,

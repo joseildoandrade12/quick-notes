@@ -5,8 +5,8 @@ import Button from "./elements/Button.vue";
 
 <template>
   <div class="container-modal">
-    <CreateForm title="Title" height="50" limit="60" />
-    <CreateForm title="Content" height="220" limit="400" />
+    <CreateForm title="Title" height="50" limit="40" />
+    <CreateForm title="Content" height="200" limit="300" />
     <Button content="Save" width="240" />
   </div>
 </template>
@@ -15,7 +15,7 @@ import Button from "./elements/Button.vue";
 .container-modal {
   width: max-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-top: 36px;
+  margin-top: 24px;
   background-color: #fff;
   padding: 20px;
   border: 1px solid #111827;
