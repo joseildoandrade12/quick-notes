@@ -25,7 +25,7 @@ label {
 }
 textarea {
   resize: none;
-  width: 580px;
+  width: 500px;
   outline: none;
   padding: 12px;
   font-size: 1.25rem;
