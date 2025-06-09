@@ -1,13 +1,38 @@
 <script setup>
-import CreateForm from "./elements/CreateForm.vue";
+import { reactive } from "vue";
+import { usePropsNotes } from "@/composables/usePropsNotes";
+import { newDate } from "@/utils/newDate";
 import Button from "./elements/Button.vue";
+
+const elementsNotes = reactive({
+  title: "" || null,
+  content: "" || null,
+  date: String,
+});
+
+const { pushDataArray } = usePropsNotes();
+elementsNotes.date = newDate();
+
+function pushData() {
+  const formater = elementsNotes.content.trim().length;
+  if (elementsNotes.content !== null && formater) {
+    pushDataArray(elementsNotes.title, elementsNotes.content, elementsNotes.date);
+    elementsNotes.title = "";
+    elementsNotes.content = "";
+  }
+}
 </script>
 
 <template>
   <div class="container-modal">
-    <CreateForm title="Title" height="50" limit="40" />
-    <CreateForm title="Content" height="200" limit="300" />
-    <Button content="Save" width="240" />
+    <div class="container-form">
+      <label for="title"> Title </label>
+      <textarea id="title" v-model="elementsNotes.title" maxlength="40"></textarea>
+      <label for="content"> Content </label>
+      <textarea id="content" maxlength="300" v-model="elementsNotes.content"></textarea>
+      <p class="message-error" v-show="!elementsNotes.content">This field must be used!</p>
+    </div>
+    <Button @click="pushData" content="Save" width="240" />
   </div>
 </template>
 
@@ -21,6 +46,40 @@ import Button from "./elements/Button.vue";
   border: 1px solid #111827;
   border-radius: 20px;
   position: absolute;
+  top: 200px;
   right: 120px;
+}
+.container-form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: 2.25rem;
+  margin-bottom: 36px;
+  color: #111827;
+}
+textarea {
+  resize: none;
+  width: 500px;
+  outline: none;
+  padding: 12px;
+  font-size: 1.25rem;
+  border: 1px solid #111827;
+  margin-bottom: 36px;
+  border-radius: 20px;
+}
+
+#title {
+  height: 50px;
+}
+#content {
+  height: 200px;
+}
+
+.message-error {
+  color: tomato;
+  margin-top: -30px;
+  font-size: 0.875rem;
+  margin-bottom: 14px;
 }
 </style>
