@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+
 import Button from "./elements/Button.vue";
 import IconGrid from "./elements/IconGrid.vue";
 import NotaForm from "./NotaForm.vue";
@@ -22,14 +23,15 @@ function toggleModal() {
         <span class="icon-add"></span>
       </Button>
     </div>
+    <NotaForm v-show="modalActive" />
   </div>
-  <NotaForm v-show="modalActive" />
 </template>
 
 <style scoped>
 .container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 h1 {

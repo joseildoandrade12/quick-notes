@@ -1,15 +1,20 @@
 <script setup>
+import { ref, defineExpose } from "vue";
+
 const props = defineProps({
   title: String,
   height: [Number, String],
   limit: [Number, String],
 });
+
+const text = ref("");
+defineExpose({ text });
 </script>
 
 <template>
   <div class="container-form">
     <label :for="title"> {{ title }} </label>
-    <textarea :style="{ height: height + 'px' }" :id="title" :maxlength="limit"></textarea>
+    <textarea v-model="text" :style="{ height: height + 'px' }" :id="title" :maxlength="limit"></textarea>
   </div>
 </template>
 
