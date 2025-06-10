@@ -24,10 +24,12 @@ if (props.title) {
 
 <style scoped>
 .container-nota {
+  break-inside: avoid;
+  margin-bottom: 20px;
   word-wrap: break-word;
   padding: 20px;
   border-radius: 20px;
-  max-width: 520px;
+  max-width: 100%;
   border: 1px solid #111827;
 }
 h2 {

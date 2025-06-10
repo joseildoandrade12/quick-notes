@@ -1,7 +1,12 @@
 <script setup>
 import { ref, computed } from "vue";
+import { useValueGrid } from "@/composables/useValueGrid";
 
-const grids = ["grid-1", "grid-2", "grid-4"];
+const grids = [
+  { name: "grid-1", num: 1 },
+  { name: "grid-2", num: 2 },
+  { name: "grid-4", num: 4 },
+];
 const count = ref(0);
 const classAnimation = ref(false);
 
@@ -13,12 +18,13 @@ function countAdd() {
   count.value++;
   classAnimation.value = true;
   if (count.value >= grids.length) count.value = 0;
+  useValueGrid(gridSelected.value.num);
   setTimeout(() => {
     classAnimation.value = false;
   }, 300);
 }
 
-const linkImage = computed(() => `icons/${gridSelected.value}.svg`);
+const linkImage = computed(() => `icons/${gridSelected.value.name}.svg`);
 </script>
 
 <template>

@@ -1,24 +1,22 @@
 <script setup>
 import NotaNova from "./NotaNova.vue";
 import { usePropsNotes } from "@/composables/usePropsNotes";
+import { useValueGrid } from "@/composables/useValueGrid";
 
 const { objData } = usePropsNotes();
+const { numberGrid } = useValueGrid();
 </script>
 
 <template>
-  <div class="container-notas">
+  <div class="container-notas" :style="{ columnCount: numberGrid }">
     <NotaNova v-for="{ title, content, date } in objData" :title :content :date />
   </div>
 </template>
 
 <style scoped>
 .container-notas {
-  display: grid;
+  column-count: 4;
   gap: 20px;
-  grid-template-columns: repeat(3, minmax(420px, 1fr));
-  grid-template-rows: auto;
   align-items: start;
-  grid-auto-flow: dense;
-  grid-template-rows: auto;
 }
 </style>
