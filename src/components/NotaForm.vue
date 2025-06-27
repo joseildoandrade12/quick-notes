@@ -32,7 +32,7 @@ function pushData() {
       <textarea id="content" maxlength="300" v-model="elementsNotes.content"></textarea>
       <p class="message-error" v-show="!elementsNotes.content">This field must be used!</p>
     </div>
-    <Button @click="pushData" content="Save" width="240" />
+    <Button @click="pushData" content="Save" width="180" />
   </div>
 </template>
 

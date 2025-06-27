@@ -28,7 +28,7 @@ button {
   background: #3b82f6;
   color: #ffffff;
   border-radius: 20px;
-  height: 45px;
+  height: 50px;
   font-size: 1.25rem;
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
