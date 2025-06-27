@@ -35,10 +35,10 @@ function toggleModal() {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
 }
 
-.icon-add {
+.icon-add {j
   display: inline-block;
   position: relative;
   width: 15px;
