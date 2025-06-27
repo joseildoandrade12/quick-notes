@@ -54,18 +54,18 @@ function pushData() {
   flex-direction: column;
 }
 label {
-  font-size: 2.25rem;
-  margin-bottom: 36px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   color: #111827;
 }
 textarea {
   resize: none;
-  width: 500px;
+  width: 420px;
   outline: none;
   padding: 12px;
   font-size: 1.25rem;
   border: 1px solid #111827;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   border-radius: 20px;
 }
 
