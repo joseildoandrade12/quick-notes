@@ -72,6 +72,7 @@ textarea {
 #title {
   height: 50px;
 }
+
 #content {
   height: 200px;
 }
@@ -81,5 +82,40 @@ textarea {
   margin-top: -30px;
   font-size: 0.875rem;
   margin-bottom: 14px;
+}
+
+@media (max-width: 870px) {
+  .container-modal {
+    right: 80px;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-modal {
+    top: 205px;
+    right: 60px;
+  }
+}
+
+@media (max-width: 580px) {
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  textarea {
+    font-size: 1rem;
+    padding: 8px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container-modal {
+    top: 205px;
+    right: 30px;
+  }
+  textarea {
+    max-width: 220px;
+  }
 }
 </style>
