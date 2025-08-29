@@ -35,8 +35,8 @@ const linkImage = computed(() => `icons/${gridSelected.value.name}.svg`);
 img {
   display: inline-block;
   margin-right: 36px;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
 }
 
 img.animation {

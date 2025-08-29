@@ -32,7 +32,7 @@ function pushData() {
       <textarea id="content" maxlength="300" v-model="elementsNotes.content"></textarea>
       <p class="message-error" v-show="!elementsNotes.content">This field must be used!</p>
     </div>
-    <Button @click="pushData" content="Save" width="240" />
+    <Button @click="pushData" content="Save" width="180" />
   </div>
 </template>
 
@@ -46,7 +46,7 @@ function pushData() {
   border: 1px solid #111827;
   border-radius: 20px;
   position: absolute;
-  top: 200px;
+  top: 135px;
   right: 120px;
 }
 .container-form {
@@ -54,24 +54,25 @@ function pushData() {
   flex-direction: column;
 }
 label {
-  font-size: 2.25rem;
-  margin-bottom: 36px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   color: #111827;
 }
 textarea {
   resize: none;
-  width: 500px;
+  width: 420px;
   outline: none;
   padding: 12px;
   font-size: 1.25rem;
   border: 1px solid #111827;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   border-radius: 20px;
 }
 
 #title {
   height: 50px;
 }
+
 #content {
   height: 200px;
 }
@@ -81,5 +82,40 @@ textarea {
   margin-top: -30px;
   font-size: 0.875rem;
   margin-bottom: 14px;
+}
+
+@media (max-width: 870px) {
+  .container-modal {
+    right: 80px;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-modal {
+    top: 205px;
+    right: 60px;
+  }
+}
+
+@media (max-width: 580px) {
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  textarea {
+    font-size: 1rem;
+    padding: 8px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container-modal {
+    top: 205px;
+    right: 30px;
+  }
+  textarea {
+    max-width: 220px;
+  }
 }
 </style>

@@ -19,7 +19,7 @@ function toggleModal() {
     <h1>Quick Notes</h1>
     <div class="elements-header">
       <IconGrid />
-      <Button @click="toggleModal" content="Create Note" width="268">
+      <Button @click="toggleModal" content="Create Note" width="230">
         <span class="icon-add"></span>
       </Button>
     </div>
@@ -35,7 +35,7 @@ function toggleModal() {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 
 .icon-add {
@@ -67,5 +67,25 @@ h1 {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .container {
+    display: block;
+  }
+  h1 {
+    margin-bottom: 20px;
+    display: block;
+    text-wrap: nowrap;
+  }
+  .elements-header {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 </style>

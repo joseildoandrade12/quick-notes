@@ -10,8 +10,8 @@
 
 html{
   height: 100vh;
-  padding: 120px;
-  margin-bottom: 120px;
+  padding: 80px 120px;
+  margin-bottom: 80px;
 }
 
 body {
@@ -27,4 +27,22 @@ h2 {
 
 p {
   font-weight: 400;
+}
+
+@media(max-width: 870px) {
+  html {
+    padding: 80px;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    padding: 80px 60px;
+  }
+}
+
+@media(max-width: 420px) {
+  html {
+    padding: 80px 30px;
+  }
 }
