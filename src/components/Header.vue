@@ -38,7 +38,7 @@ h1 {
   font-size: 2.75rem;
 }
 
-.icon-add {j
+.icon-add {
   display: inline-block;
   position: relative;
   width: 15px;
@@ -67,5 +67,17 @@ h1 {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .container {
+    display: block;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .elements-header {
+    justify-content: space-between;
+  }
 }
 </style>
