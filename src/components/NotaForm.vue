@@ -4,9 +4,11 @@ import { usePropsNotes } from "@/composables/usePropsNotes";
 import { newDate } from "@/utils/newDate";
 import Button from "./elements/Button.vue";
 
+const emit = defineEmits(["toggle"]);
+
 const elementsNotes = reactive({
-  title: "" || null,
-  content: "" || null,
+  title: null,
+  content: null,
   date: String,
 });
 
@@ -14,11 +16,14 @@ const { pushDataArray } = usePropsNotes();
 elementsNotes.date = newDate();
 
 function pushData() {
-  const formater = elementsNotes.content.trim().length;
-  if (elementsNotes.content !== null && formater) {
-    pushDataArray(elementsNotes.title, elementsNotes.content, elementsNotes.date);
-    elementsNotes.title = "";
-    elementsNotes.content = "";
+  if (elementsNotes.content !== null) {
+    const formater = elementsNotes.content.trim().length;
+    if (formater) {
+      pushDataArray(elementsNotes.title, elementsNotes.content, elementsNotes.date);
+      elementsNotes.title = "";
+      elementsNotes.content = "";
+      emit("toggle");
+    }
   }
 }
 </script>

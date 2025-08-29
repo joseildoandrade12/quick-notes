@@ -23,7 +23,7 @@ function toggleModal() {
         <span class="icon-add"></span>
       </Button>
     </div>
-    <NotaForm v-show="modalActive" />
+    <NotaForm v-show="modalActive" @toggle="modalActive = !modalActive"/>
   </div>
 </template>
 
