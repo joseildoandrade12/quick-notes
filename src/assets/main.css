@@ -35,8 +35,14 @@ p {
   }
 }
 
-@media(max-width: 770px) {
+@media(max-width: 720px) {
   html {
     padding: 80px 60px;
+  }
+}
+
+@media(max-width: 420px) {
+  html {
+    padding: 80px 30px;
   }
 }
