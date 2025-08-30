@@ -9,7 +9,7 @@ const { numberGrid } = useValueGrid();
 
 <template>
   <div class="container-notas" :style="{ columnCount: numberGrid }">
-    <NotaNova v-for="{ title, content, date } in objData" :title :content :date />
+    <NotaNova v-for="{ title, content, date, id } in objData" :title :content :date :id="id" />
   </div>
 </template>
 
