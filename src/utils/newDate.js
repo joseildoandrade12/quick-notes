@@ -1,4 +1,4 @@
-const daysWeek = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
+const daysWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = [
   "January",
   "February",
