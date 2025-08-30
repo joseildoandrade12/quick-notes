@@ -21,15 +21,15 @@ function blockCountAddGrid() {
   if (windowWidth <= 940) {
     if (count.value > 1) count.value = 0;
   }
+  useValueGrid(gridSelected.value.num);
 }
 
 function countAdd() {
   count.value++;
   classAnimation.value = true;
 
-  blockCountAddGrid();
   if (count.value >= grids.length) count.value = 0;
-  useValueGrid(gridSelected.value.num);
+  blockCountAddGrid();
 
   setTimeout(() => {
     classAnimation.value = false;
