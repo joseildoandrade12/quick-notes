@@ -2,6 +2,8 @@
 import { ref, computed } from "vue";
 import { useValueGrid } from "@/composables/useValueGrid";
 
+window.addEventListener("resize", blockCountAddGrid);
+
 const grids = [
   { name: "grid-1", num: 1 },
   { name: "grid-2", num: 2 },
@@ -14,11 +16,21 @@ const gridSelected = computed(() => {
   return grids[count.value];
 });
 
+function blockCountAddGrid() {
+  const windowWidth = window.innerWidth;
+  if (windowWidth <= 940) {
+    if (count.value > 1) count.value = 0;
+  }
+}
+
 function countAdd() {
   count.value++;
   classAnimation.value = true;
+
+  blockCountAddGrid();
   if (count.value >= grids.length) count.value = 0;
   useValueGrid(gridSelected.value.num);
+
   setTimeout(() => {
     classAnimation.value = false;
   }, 300);
