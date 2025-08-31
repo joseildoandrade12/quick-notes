@@ -1,24 +1,30 @@
 <script setup>
 import { ref } from "vue";
+import IconsCard from "../elements/IconsCard.vue";
+
 const props = defineProps({
   title: String,
   content: String,
   date: String,
+  id: Number,
 });
-
 const modificatorStyle = ref(false);
+
 if (props.title) {
   modificatorStyle.value = true;
 }
 </script>
 
 <template>
-  <div class="container-nota">
+  <div class="container-nota" :id>
     <h2 v-show="modificatorStyle">{{ title }}</h2>
     <p class="content">
       {{ content }}
     </p>
-    <time>{{ date }}</time>
+    <div class="footer-card">
+      <time>{{ date }}</time>
+      <IconsCard :idCard="id"/>
+    </div>
   </div>
 </template>
 
@@ -41,5 +47,10 @@ h2 {
   line-height: 1.5;
   letter-spacing: 1px;
   margin-bottom: 40px;
+}
+.footer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

@@ -5,11 +5,29 @@ import { useValueGrid } from "@/composables/useValueGrid";
 
 const { objData } = usePropsNotes();
 const { numberGrid } = useValueGrid();
+
+if (!objData.value.length && localStorage.length) {
+  let items = [];
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (+key) {
+      const objectItens = JSON.parse(localStorage.getItem(key));
+      items.push({
+        title: objectItens.title,
+        content: objectItens.content,
+        date: objectItens.date,
+        id: key,
+      });
+    }
+  }
+  objData.value = items;
+}
 </script>
 
 <template>
   <div class="container-notas" :style="{ columnCount: numberGrid }">
-    <NotaNova v-for="{ title, content, date } in objData" :title :content :date />
+    <NotaNova v-for="{ title, content, date, id } in objData" :title :content :date :id="+id" />
   </div>
 </template>
 
