@@ -53,4 +53,14 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+
+@media (max-width: 450px) {
+  time {
+    margin-bottom: 16px;
+  }
+  .footer-card {
+    align-items: start;
+    flex-direction: column;
+  }
+}
 </style>
