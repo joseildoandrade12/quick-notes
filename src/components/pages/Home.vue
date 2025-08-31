@@ -17,7 +17,7 @@ if (!objData.value.length && localStorage.length) {
         title: objectItens.title,
         content: objectItens.content,
         date: objectItens.date,
-        id: i,
+        id: key,
       });
     }
   }
@@ -27,7 +27,7 @@ if (!objData.value.length && localStorage.length) {
 
 <template>
   <div class="container-notas" :style="{ columnCount: numberGrid }">
-    <NotaNova v-for="{ title, content, date, id } in objData" :title :content :date :id="id" />
+    <NotaNova v-for="{ title, content, date, id } in objData" :title :content :date :id="+id" />
   </div>
 </template>
 
