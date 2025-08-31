@@ -24,12 +24,18 @@ img {
   border-radius: 4px;
   cursor: pointer;
   padding: 2px;
-  margin-left: 16px;
+  margin-right: 16px;
 }
 .icon-delete {
   background-color: #ef4444;
 }
 .icon-edit {
   background-color: #3b82f6;
+}
+
+@media (max-width: 450px) {
+  img {
+    margin-right: 12px;
+  }
 }
 </style>
