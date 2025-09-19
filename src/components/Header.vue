@@ -62,7 +62,7 @@ h1 {
   content: "";
   position: absolute;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 6px;
   width: 15px;
   height: 4px;
   top: 50%;
@@ -82,20 +82,42 @@ h1 {
 @media (max-width: 720px) {
   .container {
     display: block;
+    margin-bottom: 40px;
   }
   h1 {
+    font-size: 2.25rem;
     margin-bottom: 20px;
     display: block;
     text-wrap: nowrap;
   }
-  .elements-header {
+  .icon-add {
+    width: 12px;
+    height: 12px;
+  }
+  .icon-add::before,
+  .icon-add::after {
+    width: 14px;
+  }
+   .elements-header {
     justify-content: space-between;
   }
 }
 
 @media (max-width: 420px) {
+  .container {
+    margin-bottom: 30px;
+  }
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+  }
+  .icon-add {
+    width: 12px;
+    height: 12px;
+  }
+  .icon-add::before,
+  .icon-add::after {
+    width: 13px;
+    height: 3px;
   }
 }
 </style>

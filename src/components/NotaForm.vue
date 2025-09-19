@@ -59,8 +59,8 @@ defineExpose({ container: containerModal });
   border: 1px solid #111827;
   border-radius: 20px;
   position: absolute;
-  top: 135px;
-  right: 120px;
+  top: 128px;
+  right: 200px;
 }
 .container-form {
   display: flex;
@@ -73,10 +73,10 @@ label {
 }
 textarea {
   resize: none;
-  width: 420px;
+  width: 440px;
   outline: none;
   padding: 12px;
-  font-size: 1.25rem;
+  font-size: 1.175rem;
   border: 1px solid #111827;
   margin-bottom: 32px;
   border-radius: 20px;
@@ -97,6 +97,12 @@ textarea {
   margin-bottom: 14px;
 }
 
+@media (max-width: 1060px) {
+  .container-modal {
+    right: 100px;
+  }
+}
+
 @media (max-width: 870px) {
   .container-modal {
     right: 80px;
@@ -105,30 +111,52 @@ textarea {
 
 @media (max-width: 720px) {
   .container-modal {
-    top: 205px;
+    top: 165px;
     right: 60px;
+  }
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  textarea {
+    font-size: 1rem;
+    padding: 9px;
+    margin-bottom: 24px;
+  }
+  #title {
+    height: 40px;
+  }
+  .message-error {
+    margin-top: -20px;
   }
 }
 
 @media (max-width: 580px) {
   label {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 12px;
   }
   textarea {
     font-size: 1rem;
-    padding: 8px;
+    padding: 13px;
     max-width: 280px;
+    margin-bottom: 16px;
+  }
+  #title {
+    height: 55px;
+  }
+  .message-error {
+    margin-top: -15px;
   }
 }
 
 @media (max-width: 420px) {
   .container-modal {
-    top: 205px;
-    right: 30px;
+    top: 140px;
+    right: 20px;
   }
   textarea {
-    max-width: 220px;
+    max-width: 260px;
   }
 }
 </style>

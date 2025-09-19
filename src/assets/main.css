@@ -10,7 +10,7 @@
 
 html{
   height: 100vh;
-  padding: 80px 120px;
+  padding: 40px 200px;
   margin-bottom: 80px;
 }
 
@@ -29,20 +29,26 @@ p {
   font-weight: 400;
 }
 
+@media(max-width: 1060px) {
+  html {
+    padding: 40px 100px ;
+  }
+}
+
 @media(max-width: 870px) {
   html {
-    padding: 80px;
+    padding: 40px 80px ;
   }
 }
 
 @media(max-width: 720px) {
   html {
-    padding: 80px 60px;
+    padding: 40px 60px;
   }
 }
 
 @media(max-width: 420px) {
   html {
-    padding: 80px 30px;
+    padding: 40px 20px;
   }
 }
