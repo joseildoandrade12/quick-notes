@@ -1,11 +1,12 @@
 <script setup>
-import { reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { usePropsNotes } from "@/composables/usePropsNotes";
 import { newDate } from "@/utils/newDate";
 import Button from "./elements/Button.vue";
 
 const emit = defineEmits(["toggle"]);
-
+const activeError = ref(true);
+const containerModal = ref(null);
 const elementsNotes = reactive({
   title: null,
   content: null,
@@ -16,7 +17,12 @@ const { pushDataArray } = usePropsNotes();
 elementsNotes.date = newDate();
 
 function pushData() {
-  if (elementsNotes.content !== null) {
+  if (!elementsNotes.content) {
+    activeError.value = false;
+  }
+
+  if (elementsNotes.content) {
+    activeError.value = true;
     const formater = elementsNotes.content.trim().length;
     if (formater) {
       pushDataArray(elementsNotes.title, elementsNotes.content, elementsNotes.date);
@@ -26,16 +32,18 @@ function pushData() {
     }
   }
 }
+
+defineExpose({ container: containerModal });
 </script>
 
 <template>
-  <div class="container-modal">
+  <div ref="containerModal" class="container-modal">
     <div class="container-form">
       <label for="title"> Title </label>
       <textarea id="title" v-model="elementsNotes.title" maxlength="40"></textarea>
       <label for="content"> Content </label>
       <textarea id="content" maxlength="300" v-model="elementsNotes.content"></textarea>
-      <p class="message-error" v-show="!elementsNotes.content">This field must be used!</p>
+      <p class="message-error" v-show="!activeError">This field must be used!</p>
     </div>
     <Button @click="pushData" content="Save" width="180" />
   </div>
