@@ -66,4 +66,18 @@ img.animation {
     opacity: 100%;
   }
 }
+
+@media (max-width: 720px) {
+  img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
 </style>
