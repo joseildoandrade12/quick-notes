@@ -118,6 +118,9 @@ textarea {
   #title {
     height: 40px;
   }
+  .message-error {
+    margin-top: -20px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -133,6 +136,9 @@ textarea {
   }
   #title {
     height: 55px;
+  }
+  .message-error {
+    margin-top: -15px;
   }
 }
 
