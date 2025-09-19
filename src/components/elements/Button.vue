@@ -24,11 +24,12 @@ function addClassButton() {
 
 <style scoped>
 button {
+  max-width: 230px;
   cursor: pointer;
   background: #3b82f6;
   color: #ffffff;
   border-radius: 20px;
-  height: 50px;
+  padding: 12px;
   font-size: 1.25rem;
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -45,6 +46,22 @@ button.animation {
   to {
     transform: translate(3px, 3px);
     box-shadow: 0 0 0;
+  }
+}
+
+@media (max-width: 720px) {
+  button {
+    max-width: 200px;
+    padding: 12px;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 420px) {
+  button {
+    max-width: 160px;
+    padding: 10px;
+    font-size: 1rem;
   }
 }
 </style>
