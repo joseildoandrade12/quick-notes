@@ -6,10 +6,20 @@ import IconGrid from "./elements/IconGrid.vue";
 import NotaForm from "./NotaForm.vue";
 
 const modalActive = ref(false);
+const modal = ref(null);
+
+function clickOutsideModal(event) {
+  const modalEl = modal.value.container;
+  if (modalActive && !modalEl.contains(event.target)) {
+    modalActive.value = !modalActive.value;
+    window.removeEventListener("click", clickOutsideModal);
+  }
+}
 
 function toggleModal() {
   setTimeout(() => {
     modalActive.value = !modalActive.value;
+    window.addEventListener("click", clickOutsideModal);
   }, 200);
 }
 </script>
@@ -23,7 +33,7 @@ function toggleModal() {
         <span class="icon-add"></span>
       </Button>
     </div>
-    <NotaForm v-show="modalActive" @toggle="modalActive = !modalActive"/>
+    <NotaForm ref="modal" v-show="modalActive" @toggle="modalActive = !modalActive" />
   </div>
 </template>
 
